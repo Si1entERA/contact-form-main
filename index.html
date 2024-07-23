@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="style.css">
 
   <title>Frontend Mentor | Contact form</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
   <main>
@@ -22,29 +23,38 @@
         <p>Contact Us</p>
       </header>
       <section class="user-details">
-        <label for="name">First Name</label>
-        <input type="text" name="name" id="name">
+        <figure>
+          <label for="name">First Name <span>*</span></label>
+          <input type="text" name="name" id="name">
+        </figure>
 
-        <label for="surname">Last Name</label>
-        <input type="text" name="surname" id="surname">
+        <figure>
+          <label for="surname">Last Name <span>*</span></label>
+          <input type="text" name="surname" id="surname">
+        </figure>
       </section>
 
       <section class="user-email">
-        <label for="email">Email Address</label>
+        <label for="email">Email Address <span>*</span></label>
         <input type="email" name="email" id="email">
       </section>
 
       <fieldset>
-        <legend>Query Type</legend>
-        <input type="radio" name="query-type" id="general-enquiry">
-        <label for="general-enquiry">General Enquiry</label>
+        <legend>Query Type <span>*</span></legend>
+          <figure class="radio-btn">
+            <input type="radio" name="query-type" id="general-enquiry">
+            <label for="general-enquiry">General Enquiry</label>
+          </figure>
         
-        <input type="radio" name="query-type" id="support-request">
-        <label for="support-request">Support Request</label>
+          <figure class="radio-btn">
+            <input type="radio" name="query-type" id="support-request">
+            <label for="support-request">Support Request</label>
+          </figure>
       </fieldset>
 
 
       <section class="message">
+        <label for="user-message">Message <span>*</span></label>
         <textarea name="user-message" id="user-message"></textarea>
       </section>
 
@@ -52,7 +62,7 @@
         <input type="checkbox" name="terms-condition" id="terms-condition">
         <label for="terms-condition">
           I consent to being contacted by the team
-          To submit this form, please consent to being contacted
+          <!-- To submit this form, please consent to being contacted -->
         </label>
       </section>
       <footer>
