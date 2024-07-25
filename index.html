@@ -18,7 +18,7 @@
 </head>
 <body>
   <main>
-    <form>
+    <form id="form">
       <header>
         <p>Contact Us</p>
       </header>
@@ -26,17 +26,20 @@
         <figure>
           <label for="name">First Name <span>*</span></label>
           <input type="text" name="name" id="name">
+          <p class="error-name">This field is required</p>
         </figure>
 
         <figure>
           <label for="surname">Last Name <span>*</span></label>
           <input type="text" name="surname" id="surname">
+          <p class="error-surname">This field is required</p>
         </figure>
       </section>
 
       <section class="user-email">
         <label for="email">Email Address <span>*</span></label>
         <input type="email" name="email" id="email">
+        <p class="error-email">Please enter a vaild email address</p>
       </section>
 
       <fieldset>
@@ -50,20 +53,27 @@
             <input type="radio" name="query-type" id="support-request">
             <label for="support-request">Support Request</label>
           </figure>
+
       </fieldset>
+      <p class="error-query">Please select a query type</p>
 
 
       <section class="message">
         <label for="user-message">Message <span>*</span></label>
         <textarea name="user-message" id="user-message"></textarea>
+        <p class="error-message">This field is required</p>
       </section>
 
       <section class="consent">
-        <input type="checkbox" name="terms-condition" id="terms-condition">
-        <label for="terms-condition">
-          I consent to being contacted by the team
-          <!-- To submit this form, please consent to being contacted -->
+        <figure class="consent-box">
+          <input type="checkbox" name="terms-condition" id="terms-condition">
+        <label for="terms-condition" id="terms-condition">
+          I consent to being contacted by the team <span>*</span>
         </label>
+        </figure>
+        
+        <p class="error-consent">To submit this form, please consent to being contacted</p>
+        
       </section>
       <footer>
         <button>Submit</button>

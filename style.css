@@ -29,6 +29,7 @@ form {
   margin: 30px 15px;
   padding: 15px 0;
   transition: ease 0.5s;
+  /* min-width: 375px; */
 }
 
 section,header, footer, fieldset {
@@ -48,6 +49,7 @@ input, textarea {
   padding: 8px 0;
   font-size: 20px;
   border-radius: 10px;
+  border: 1px solid var(--Grey-900-darker);
 }
 
 input, textarea, button, label {
@@ -67,6 +69,7 @@ header {
 
 fieldset {
   display: flex;
+  border: 4px solid orange;
   flex-direction: column;
   border: none;
 }
@@ -77,10 +80,12 @@ input[type="radio"], input[type="checkbox"] {
 
 
 .radio-btn {
-  border: 1px solid purple;
+  border: 1px solid var(--Grey-900-darker);
+  border-radius: 10px;
   display: flex;
   flex-direction: row;
   padding: 0 25px;
+  margin: 5px;
 }
 
 figure {
@@ -100,6 +105,17 @@ textarea {
 
 .consent {
   padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.consent-box {
+  display: flex;
+  flex-direction: row;
+}
+
+#terms-condition {
+  
 }
 
 button {
@@ -115,6 +131,21 @@ button {
 
 button:hover {
   background-color: var(--Grey-900-darker);
+}
+
+/* ERROR HANDLING */
+.error-name, .error-surname, .error-message, 
+.error-email, .error-query, .error-consent {
+  color: var(--Red);
+  display: none;
+}
+
+.error-query {
+  margin: 5px 0px 10px 15px;
+}
+
+.error {
+  border: 2px solid var(--Red);
 }
 
 @media screen and (min-width: 755px) {
@@ -137,7 +168,8 @@ button:hover {
   }
 
   .radio-btn {
-    padding: 0;
+    /* padding: 0; */
+    width: 100%;
   }
 
   textarea {
