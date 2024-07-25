@@ -22,17 +22,23 @@ const submit = document.getElementById('submit');
 
 //validate input from 'firstName, lastName, message'
 const inputValidate = () => {
+  let valid = true;
+
   if(firstName.value === ""){
-    errorName.style.display = 'block'
+    errorName.style.display = 'block';
+    valid = false;
   }
   if(lastName.value === ""){
-    errorSurname.style.display = 'block'
+    errorSurname.style.display = 'block';
+    vaild = false;
   }
   if(email.value === ""){
-    errorEmail.style.display = 'block'
+    errorEmail.style.display = 'block';
+    valid = false;
   }
   if(message.value === ""){
-    errorMessage.style.display = 'block'
+    errorMessage.style.display = 'block';
+    valid = false;
   }
 
   setTimeout(() => {
@@ -42,6 +48,8 @@ const inputValidate = () => {
     errorMessage.style.display = 'none'
 
   },3000)
+
+  return valid;
 }
 
 //validate query type
@@ -61,6 +69,8 @@ const queryValidate = () => {
   setTimeout(() => {
     errorQuery.style.display = 'none';
   }, 3000);
+
+  return valid;
 }
 
 //validate checkbox from T&Cs
@@ -80,12 +90,35 @@ const checkboxValidate = () => {
   setTimeout(() => {
     errorConsent.style.display = 'none'
   },3000);
+
+  return valid;
+}
+
+const clearForm = () => {
+  firstName.value = "";
+  lastName.value = "";
+  email.value = "";
+  message.value = "";
+
+  for(let i = 0; i < radios.length; i++){
+    radios[i].checked = false;
+  }
+
+  for(let i = 0; i < consent.length; i++){
+    consent[i].checked = false;
+  }
 }
 
 function collect(){
-  inputValidate();
-  queryValidate();
-  checkboxValidate();
+  const isInputValid = inputValidate();
+  const isQueryValid = queryValidate();
+  const isCheckboxValid = checkboxValidate();
+
+  if (isInputValid && isQueryValid && isCheckboxValid) {
+    alert('Form submitted successfully!');
+    clearForm();
+  }
+
 }
 
 form.addEventListener('submit', (e)=> {
