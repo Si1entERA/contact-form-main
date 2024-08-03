@@ -16,6 +16,7 @@ const radios = document.getElementsByName("query-type");
 const message = document.getElementById('user-message');
 const consent = document.getElementsByName('terms-condition');
 
+const successMessage = document.querySelector('.popup-message');
 const submit = document.getElementById('submit');
 
 
@@ -115,8 +116,12 @@ function collect(){
   const isCheckboxValid = checkboxValidate();
 
   if (isInputValid && isQueryValid && isCheckboxValid) {
-    alert('Form submitted successfully!');
+    successMessage.style.display = 'block';
     clearForm();
+
+    setTimeout(() => {
+      successMessage.style.display = 'none';
+    }, 3000);
   }
 
 }
