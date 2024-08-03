@@ -26,23 +26,32 @@ const inputValidate = () => {
   let valid = true;
 
   if(firstName.value === ""){
+    firstName.classList.add('error-border')
     errorName.style.display = 'block';
     valid = false;
   }
   if(lastName.value === ""){
+    lastName.classList.add('error-border')
     errorSurname.style.display = 'block';
     vaild = false;
   }
   if(email.value === ""){
+    email.classList.add('error-border')
     errorEmail.style.display = 'block';
     valid = false;
   }
   if(message.value === ""){
+    message.classList.add('error-border')
     errorMessage.style.display = 'block';
     valid = false;
   }
 
   setTimeout(() => {
+    firstName.classList.remove('error-border')
+    lastName.classList.remove('error-border')
+    email.classList.remove('error-border')
+    message.classList.remove('error-border')
+
     errorName.style.display = 'none'
     errorSurname.style.display = 'none'
     errorEmail.style.display = 'none'
