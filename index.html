@@ -26,17 +26,17 @@
         <p>Contact Us</p>
       </header>
       <section class="user-details">
-        <figure>
+        <div>
           <label for="name">First Name <span>*</span></label>
           <input type="text" name="name" id="name" autocomplete="given-name">
           <p class="error-name">This field is required</p>
-        </figure>
+        </div>
 
-        <figure>
+        <div>
           <label for="surname">Last Name <span>*</span></label>
           <input type="text" name="surname" id="surname" autocomplete="family-name">
           <p class="error-surname">This field is required</p>
-        </figure>
+        </div>
       </section>
 
       <section class="user-email">
@@ -47,15 +47,15 @@
 
       <fieldset>
         <legend>Query Type <span>*</span></legend>
-          <figure class="radio-btn">
+          <div class="radio-btn">
             <input type="radio" name="query-type" id="general-enquiry">
             <label for="general-enquiry">General Enquiry</label>
-          </figure>
+          </div>
         
-          <figure class="radio-btn">
+          <div class="radio-btn">
             <input type="radio" name="query-type" id="support-request">
             <label for="support-request">Support Request</label>
-          </figure>
+          </div>
 
       </fieldset>
       <p class="error-query">Please select a query type</p>
@@ -68,12 +68,12 @@
       </section>
 
       <section class="consent">
-        <figure class="consent-box">
+        <div class="consent-box">
           <input type="checkbox" name="terms-condition" id="terms-condition">
         <label for="terms-condition" id="terms-condition">
           I consent to being contacted by the team <span>*</span>
         </label>
-        </figure>
+        </div>
         
         <p class="error-consent">To submit this form, please consent to being contacted</p>
         
@@ -84,10 +84,10 @@
     </form>
 
     <section class="popup-message">
-      <figure class="success-top">
+      <div class="success-top">
         <img src="./assets/images/icon-success-check.svg" class="success-icon" alt="success icon">
         <p>Message Sent!</p>
-      </figure>
+      </div>
       <p>Thanks for completing the form. We'll be in touch soon!</p>
     </section>
   </main>
